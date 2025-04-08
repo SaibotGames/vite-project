@@ -4,7 +4,7 @@ import SettingsMenu from "./SettingsMenu";
 
 interface Props {
   darkMode: boolean;
-  toggleTheme: () => void;
+  toggleTheme: (bool:boolean) => void;
 }
 
 const Settings = ({ darkMode, toggleTheme }: Props) => {
@@ -15,10 +15,10 @@ const Settings = ({ darkMode, toggleTheme }: Props) => {
 
   return (
     <SettingsContainer>
-      <div className={`light-theme-btn`}onClick={toggleTheme}>
+      <div className={`theme-btn`}onClick={() =>toggleTheme(false)}>
         <i className={`bi bi-sun${darkMode ? "" : "-fill"}`}></i>{" "}
       </div>
-      <div className={`dark-theme-btn `} onClick={toggleTheme}>
+      <div className={`theme-btn `} onClick={() =>toggleTheme(true)}>
         <i className={`bi bi-moon${darkMode ? "-fill" : ""}`}></i>
       </div>
       <div
@@ -27,7 +27,7 @@ const Settings = ({ darkMode, toggleTheme }: Props) => {
       >
         <i className={`bi bi-gear${settingsOpen ? "-fill" : ""}`}></i>
       </div>
-      {settingsOpen && <SettingsMenu />}
+      {settingsOpen && <SettingsMenu setSettingsOpen={setSettingsOpen}/>}
     </SettingsContainer>
   );
 };

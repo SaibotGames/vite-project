@@ -8,7 +8,11 @@ export const SettingsContainer = styled.div`
   position: relative;
 
 
-
+  .theme-btn{
+    &:hover{
+      cursor: pointer;
+    }
+  }
   .settings-btn {
     cursor: pointer;
   }

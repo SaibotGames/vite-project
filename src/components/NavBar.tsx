@@ -6,7 +6,7 @@ import WeatherSearch from "./WeatherSearch";
 
 interface Props {
   darkMode: boolean;
-  toggleTheme: () => void;
+  toggleTheme: (bool:boolean) => void;
 }
 export default function NavBar({ darkMode, toggleTheme }: Props) {
  

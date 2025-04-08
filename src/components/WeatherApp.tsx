@@ -20,7 +20,7 @@ function WeatherApp() {
       <StyledWrapper>
         <NavBar
           darkMode={darkMode}
-          toggleTheme={() => setDarkMode(!darkMode)}
+          toggleTheme={(bool:boolean) => setDarkMode(bool)}
         />
         {loading ? (
           

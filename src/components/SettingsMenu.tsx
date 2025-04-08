@@ -3,12 +3,16 @@ import { MEASUREMENT_SYSTEMS } from '../types/weather'
 import { Flex } from './style/layout/Flex.style'
 import { useWeather } from '../context/WeatherContext'
 
-const SettingsMenu = () => {
+interface Props{
+  setSettingsOpen:(bool:boolean)=> void;
+}
+const SettingsMenu = ({setSettingsOpen}:Props) => {
 
     const{measurementSystem, setMeasurementSystem} = useWeather();
 
     const switchMeasurements =(system:string) =>{
         setMeasurementSystem(system)
+        setSettingsOpen(false);
       }
   return (
     <Flex className="measurement-systems" $dir='column' $justify='center'>
